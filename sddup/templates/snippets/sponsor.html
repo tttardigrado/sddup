@@ -1,0 +1,8 @@
+{% load wagtailimages_tags %}
+
+<h6 class="fw-bold my-4">Parceiros:</h6>
+{% for sponsor in sponsors %}
+    <span class="mx-auto d-block d-xl-inline me-xl-4 my-4">
+        {% image sponsor.logo height-32 %}
+    </span>
+{% endfor %}

@@ -1,0 +1,12 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="col">
+    <div class="card">
+        {% image self.image fill-400x400 as img %}
+        <img class="card-img-top" src="{{img.url}}" alt="Picture">
+        <div class="card-body">
+            <h5 class="card-title">{{ self.position }}</h5>
+            <p class="card-text">{{ self.name }}</p>
+        </div>
+    </div> 
+</div>

@@ -1,0 +1,9 @@
+{% load menu_tags %}
+{% get_menu "footer-menu" as footer %}
+
+<div class="col-md-4 col-lg-4 mx-auto mb-md-0 mb-4">
+    <h6 class="fw-bold mb-4">Links:</h6>
+    {% for item in footer.menu_items.all %}
+        <p><i class="bi bi-box-arrow-up-right"></i> <a href="{{ item.link }}" class="text-reset">{{ item.title }}</a></p>
+    {% endfor %}
+</div>

@@ -1,0 +1,24 @@
+{% load snippet_tags %}
+
+
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-muted mt-auto">
+    <section>
+        <div class="container text-center text-md-start border-top py-4" >
+            <div class="row mt-3">
+                <div class="col-md-4 col-lg-4 mx-auto mb-4">
+                    <h6 class="fw-bold mb-4">SdDUP:</h6>
+                    <p>Ao Bom, Ao Belo, Ao Amor, e, talvez, À Verdade</p>
+                    {% sponsor %}
+                </div>
+                {% include "snippets/footer_menu.html" %}
+                {% contact %}
+            </div>
+        </div>
+    </section>
+  
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2024 Copyright: <strong>SdDUP</strong>
+    </div>
+</footer>
+  <!-- Footer -->

@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags snippet_tags %}
+
+{% block content %}
+
+    {% include "home/hero.html" %}
+
+    <div class="container py-3 py-md-5">
+        {% for b in self.content %}
+            {% include_block b %}
+        {% endfor %}
+
+        {% next_events %}
+    </div>
+    
+
+      
+
+    
+    <!--<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xxl-4 g-4">
+        <div class="col">
+            <div class="card h-100 image-container border rounded-3 shadow" style="position: relative">
+                <div class="bottom-left">
+                    <div class="thumbnail bg-primary">
+                        <div class="thumbnail-date text-white">
+                            <span class="thumbnail-date-day">17</span>
+                            <span class="thumbnail-date-month ">ago</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-right">
+                    <div class="tags-list mb-2 text-white">
+                        <span class="badge bg-primary mb-1 me-1">Polo Zero</span>
+                        <span class="badge bg-primary mb-1 me-1">18h</span>
+                    </div>
+                </div>
+                <a href="#"><img src="https://images.pexels.com/photos/1230397/pexels-photo-1230397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" @load="imageLoaded" class="card-img-top " alt="Event"/></a>
+                <div class="image-overlay text-over text-center d-flex justify-content-center align-items-center">
+                    <div>Debate Inaugural</div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 image-container border rounded-3 shadow" style="position: relative">
+                <div class="bottom-left">
+                    <div class="thumbnail bg-primary">
+                        <div class="thumbnail-date text-white ">
+                            <span class="thumbnail-date-day">17</span>
+                            <span class="thumbnail-date-month">ago</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-right">
+                    <div class="tags-list mb-2 text-white">
+                        <span class="badge bg-primary mb-1 me-1">Polo Zero</span>
+                        <span class="badge bg-primary mb-1 me-1">18h</span>
+                    </div>
+                </div>
+                <a href="#"><img src="https://images.pexels.com/photos/1230397/pexels-photo-1230397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" @load="imageLoaded" class="card-img-top " alt="Event"/></a>
+                <div class="image-overlay text-over text-center d-flex justify-content-center align-items-center">
+                    <div>Debate Inaugural</div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 image-container border rounded-3 shadow" style="position: relative">
+                <div class="bottom-left">
+                    <div class="thumbnail bg-primary">
+                        <div class="thumbnail-date text-white">
+                            <span class="thumbnail-date-day">17</span>
+                            <span class="thumbnail-date-month">ago</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-right">
+                    <div class="tags-list mb-2 text-white ">
+                        <span class="badge bg-primary mb-1 me-1">Polo Zero</span>
+                        <span class="badge bg-primary mb-1 me-1">18h</span>
+                    </div>
+                </div>
+                <a href="#"><img src="https://images.pexels.com/photos/1230397/pexels-photo-1230397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" @load="imageLoaded" class="card-img-top " alt="Event"/></a>
+                <div class="image-overlay text-over text-center d-flex justify-content-center align-items-center">
+                    <div>Debate Inaugural</div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 image-container border rounded-3 shadow" style="position: relative">
+                <a href="#"><img src="https://images.pexels.com/photos/1230397/pexels-photo-1230397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" @load="imageLoaded" class="card-img-top " alt="Event"/></a>
+                <div class="image-overlay text-over text-center d-flex justify-content-center align-items-center">
+                    <div><i class="bi bi-plus-circle-fill"></i> Mais Eventos</div>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>-->     
+</div>
+
+    
+{% endblock %}

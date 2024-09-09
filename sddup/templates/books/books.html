@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+    <div class="container py-3 py-md-5">
+        <h1 class="mb-3">Biblioteca</h1>
+        <p>
+            A Biblioteca da SdDUP está disponível para qualquer associadx. 
+            Contacta a Direção para saber mais.
+        </p>
+
+        <div class="table-responsive">
+            <table class="table table-responsive">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">Título</th>
+                        <th scope="col">Autor</th>
+                        <th scope="col">Língua</th>
+                        <th scope="col">Disponível</th>
+                        <th scope="col">Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for book in books %}
+                        <tr>
+                            <td>{{ book.title }}</td>
+                            <td>{{ book.author }}</td>
+                            <td>{{ book.language }}</td>
+                            <td class="text-center">
+                                {% if book.landed_to %} ❌ {% else %} ✅ {% endif %}
+                            </td>
+                            <td>
+                                <a href="{{ book.url }}" target="_blank" class="text-reset">
+                                    <i class="bi bi-box-arrow-up-right"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

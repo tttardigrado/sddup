@@ -1,0 +1,31 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="row {% if self.image_left %} flex-md-row-reverse {% endif %} align-items-center g-5 py-4 py-lg-5">
+    {# Image #}
+    <div class="col-12 col-md-6">
+        {% image self.image fill-700x400 as img %}
+        <img src="{{ img.url }}" alt="Bootstrap Themes" loading="lazy"
+             class="d-block mx-auto img-fluid border rounded-3 shadow">
+    </div>
+
+    {# Info #}
+    <div class="col-12 col-md-6">
+        <h2 class="display-5 fw-bold lh-1 mb-3">{{ self.title }}</h2>
+        <p class="lead">{{ self.body }}</p>
+        
+        {# Button #}
+        {% if self.btn_text%}
+            {% if self.btn_url %}
+                <a class="btn btn-primary" href="{{ self.btn_url }}">
+                    {{ self.btn_text }}
+                </a>
+            {% elif self.btn_page %}
+                <a class="btn btn-primary" href="{% pageurl self.btn_page %}">
+                    {{ self.btn_text }}
+                </a>              
+            {% endif %}
+        {% endif %}
+    </div>
+</div>
+
+<hr>

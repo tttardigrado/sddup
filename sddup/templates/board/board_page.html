@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+    <div class="container py-3 py-md-5">
+        <h1 class="">{{ self.title }}</h1>
+
+        <h2 class="mt-5">Direção</h2>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 h-100 g-4">
+            {% for bm in self.board %}
+                {% include_block bm %}
+            {% endfor %}
+        </div>
+
+        <h2 class="mt-5">Mesa da Assembleia Geral</h2>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 h-100 g-4">
+            {% for bm in self.general_assembly %}
+                {% include_block bm %}
+            {% endfor %}
+        </div>
+
+        <h2 class="mt-5">Conselho Fiscal</h2>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 h-100 g-4">
+            {% for bm in self.auditing %}
+                {% include_block bm %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

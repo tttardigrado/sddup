@@ -1,0 +1,9 @@
+<section class="d-flex justify-content-center p-4 display-7">
+    <div>
+        {% for link in links %}
+            <a href="{{ link.url }}" class="icon-link me-4 text-reset">
+                <h5><i class="link-secondary bi bi-{{ link.icon_name }}"></i></h5>
+            </a>
+        {% endfor %}
+    </div>
+</section>

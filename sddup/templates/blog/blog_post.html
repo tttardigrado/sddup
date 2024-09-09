@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block extra_css %}
+    <style>
+        img.full-width {
+            display: block;
+            margin: 2rem auto;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="container py-3 py-md-5">
+        <h1>{{ self.title }}</h1>
+        <h6 class="mb-5">{{ self.date }}</h6>    
+        {{ self.body | richtext }}
+    </div>
+{% endblock %}

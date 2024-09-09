@@ -1,0 +1,14 @@
+{% load wagtailcore_tags wagtailimages_tags snippet_tags %}
+<div class="border-bottom mb-5">
+
+<div class="container pt-5 text-center">
+    <h1 class="display-4 fw-bold">{{ self.banner_title }}</h1>
+    <div class="mx-auto">
+        <p class="lead">{{ self.banner_subtitle }}</p>
+        {% social_media %}
+    </div>
+    <div class="overflow-hidden" style="max-height: 50vh;">
+        {% image self.banner_image fill-1400x750 class="img-fluid border rounded-3 shadow mb-4 " %}
+    </div>
+</div>
+</div>

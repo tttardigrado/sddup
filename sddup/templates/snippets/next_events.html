@@ -1,0 +1,32 @@
+{% if events %}
+
+<h2 class="display-5 fw-bold lh-1 pt-3 pt-lg-5">Próximos Eventos</h2>
+<div class="row {% if self.image_left %} flex-md-row-reverse {% endif %} align-items-center g-5 py-4 py-lg-5">
+    <div class="col-12">
+        <ul class="list-group ">
+            {% for ev in events %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">{{ ev.name }}</div>
+                            {{ ev.start_date.day }}/{{ ev.start_date.month}}
+                            
+                            {% if ev.start_date != ev.end_date%}
+                                - {{ ev.end_date.day }}/{{ ev.end_date.month }}
+                            {% endif %}
+                            
+                            | {{ ev.location}} 
+                            
+                            {% if ev.hour %} 
+                                | {{ ev.hour }}
+                            {% endif %}
+                    </div>
+                    {% if ev.url %}
+                        <a class="text-reset" href="{{ ev.url }}"><i class="bi bi-box-arrow-up-right fs-5"></i></a>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+{% endif %}

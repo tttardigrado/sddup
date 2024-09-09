@@ -1,0 +1,9 @@
+<div class="col-md-4 col-lg-4 mx-auto mb-md-0 mb-4">
+    <h6 class="fw-bold mb-4">Contactos:</h6>
+    {% for contact in contacts %}
+        {% if contact.show_in_footer %}
+            <p><i class="bi bi-{{ contact.kind }}"></i> {{ contact.text }}</p>
+        {% endif %}
+    {% endfor %}
+    <p><i class="bi bi-box-arrow-up-right"></i> <a href="/contacts" class="text-reset">Ver Mais</a></p>
+</div>
